@@ -16,11 +16,9 @@ function getTotalBalance(transactionsList) {
     });
 
     const result = transformedTransactions.reduce(function(acc, transactionObj) {
-        const currency = Object.keys(transactionObj);
-        let amount = Object.values(transactionObj);
-        const newValue = acc[currency] ? acc[currency] + amount : amount;
-        console.log(newValue);
-        amount = newValue;
+        const currency = Object.keys(transactionObj)[0];
+        let amount = Object.values(transactionObj)[0];
+        
         Object.assign(acc, transactionObj);
         return acc;
     },{});
