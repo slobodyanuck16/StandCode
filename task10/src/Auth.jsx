@@ -12,12 +12,6 @@ class Auth extends Component {
         };
     }
 
-    onLogout = () => {
-        this.setState({
-            isLoggedIn: false,
-        });
-    };
-    
     onLogin = () => {
         this.setState({
             isLoading: true,
@@ -30,10 +24,16 @@ class Auth extends Component {
         }, 2000)
     };
 
+    onLogout = () => {
+        this.setState({
+            isLoggedIn: false,
+        });
+    };
+
     render() {
         const {isLoggedIn, isLoading} = this.state;
         if (isLoading) {
-            return <Spinner size="16"/>;
+            return <Spinner size={16}/>;
         }
         if(isLoggedIn) {
             return <Logout handleLogout={this.onLogout} />;
