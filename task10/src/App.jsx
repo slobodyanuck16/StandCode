@@ -1,8 +1,4 @@
-import React, { Component } from "react";
-// import Logout from "./Logout";
-// import Login from "./Login";
-// import Spinner from "./Spinner";
-
+import React from "react";
 
 function App() {
     return <Auth />;
